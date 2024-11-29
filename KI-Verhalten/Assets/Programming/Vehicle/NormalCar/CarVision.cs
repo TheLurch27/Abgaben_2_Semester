@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CarVision : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CarVision : MonoBehaviour
 
     private RaycastHit hitInfo; // Speichert Informationen über getroffene Objekte
     private CarController carController;
+    private StartState startState;
 
     private void Start()
     {
@@ -26,19 +28,19 @@ public class CarVision : MonoBehaviour
 
         if (Physics.Raycast(origin, direction, out hitInfo, rayDistance, layerMask))
         {
-            Debug.Log($"Collider hit: {hitInfo.collider.gameObject.name}");
+            // Debug.Log($"Collider hit: {hitInfo.collider.gameObject.name}");
 
             TrafficLightTrigger trafficLightTrigger = hitInfo.collider.GetComponent<TrafficLightTrigger>();
             if (trafficLightTrigger == null)
             {
-                Debug.LogWarning("TrafficLightTrigger not found on collider!");
+                // Debug.LogWarning("TrafficLightTrigger not found on collider!");
                 return;
             }
 
             TrafficLight trafficLight = trafficLightTrigger.GetTrafficLight();
             if (trafficLight == null)
             {
-                Debug.LogWarning("TrafficLight is not assigned in TrafficLightTrigger!");
+                // Debug.LogWarning("TrafficLight is null! Make sure the TrafficLight is assigned in TrafficLightTrigger.");
                 return;
             }
 
@@ -47,35 +49,50 @@ public class CarVision : MonoBehaviour
     }
 
 
+    // private void CheckTrafficLightState(TrafficLight trafficLight)
+    // {
+    //     var currentState = trafficLight.CurrentState;
+    // 
+    //     Debug.Log($"Traffic Light State: {currentState.GetType().Name}");
+    // 
+    //     if (currentState is RedLightState_Car || currentState is YellowLightState_Car)
+    //     {
+    //         Debug.Log("Red or Yellow light detected. Preparing to stop...");
+    //         // Bremsen und 1 Meter vor dem Trigger anhalten
+    //         carController.StopBeforeTrigger(hitInfo.point);
+    //     }
+    //     else if (currentState is GreenLightState_Car)
+    //     {
+    //         Debug.Log("Green light detected. Proceeding...");
+    //         // Auto darf weiterfahren
+    //         carController.Accelerate();
+    //     }
+    // }
+
     private void CheckTrafficLightState(TrafficLight trafficLight)
     {
-        if (trafficLight == null)
+        if (trafficLight.CurrentState == null)
         {
-            Debug.LogWarning("TrafficLight is null! Make sure the TrafficLight is assigned to the TrafficLightTrigger.");
+            // Debug.LogWarning("TrafficLight state is null!");
             return;
         }
 
-        var currentState = trafficLight.CurrentState;
+        // Debug.Log($"TrafficLight Current State: {trafficLight.CurrentState.GetType().Name}");
 
-        if (currentState == null)
+        // Prüfen, ob die Ampel rot oder gelb ist
+        if (trafficLight.CurrentState is RedLightState_Car || trafficLight.CurrentState is YellowLightState_Car)
         {
-            Debug.LogWarning("CurrentState of TrafficLight is null!");
-            return;
+            // Debug.Log("Red or Yellow light detected. Preparing to stop...");
+            carController.StopBeforeTrigger(hitInfo.point); // Stop-Logik
         }
-
-        Debug.Log($"Traffic Light State: {currentState.GetType().Name}");
-
-        if (currentState is RedLightState_Car || currentState is YellowLightState_Car)
+        // Prüfen, ob die Ampel grün ist
+        else if (trafficLight.CurrentState is GreenLightState_Car)
         {
-            Debug.Log("Red or Yellow light detected. Preparing to stop...");
-            carController.StopBeforeTrigger(hitInfo.point);
-        }
-        else if (currentState is GreenLightState_Car)
-        {
-            Debug.Log("Green light detected. Proceeding...");
+            // Debug.Log("Green light detected. Proceeding...");
+            // Nichts tun oder explizit beschleunigen
+            carController.Accelerate();
         }
     }
-
 
     private void OnDrawGizmos()
     {

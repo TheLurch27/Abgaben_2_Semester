@@ -16,6 +16,8 @@ public class GreenLightState_Car : IState
             lightController.M_TrafficLight_Yellow_Off,
             lightController.M_TrafficLight_Green_On
         );
+
+        // Debug.Log("Entering GreenLightState.");
     }
 
     public void Execute()
@@ -25,6 +27,6 @@ public class GreenLightState_Car : IState
 
     public void Exit()
     {
-        // Keine Aktion beim Verlassen
+        Debug.Log("Exiting GreenLightState.");
     }
 }

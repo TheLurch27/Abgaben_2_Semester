@@ -12,7 +12,7 @@ public class DriveState : IState
 
     public void Enter()
     {
-        Debug.Log("Entering DriveState: Driving at max speed...");
+        // Debug.Log("Entering DriveState: Driving at max speed...");
         carController.CurrentSpeed = carController.maxSpeed; // Geschwindigkeit sofort setzen
     }
 
@@ -23,6 +23,6 @@ public class DriveState : IState
 
     public void Exit()
     {
-        Debug.Log("Exiting DriveState");
+        // Debug.Log("Exiting DriveState");
     }
 }

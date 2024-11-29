@@ -27,7 +27,7 @@ public class CarSpawner : MonoBehaviour
         }
         else
         {
-            Debug.LogError("CarController not found on spawned car!");
+            // Debug.LogError("CarController not found on spawned car!");
         }
 
         // Wechsel den Spawnpunkt für das nächste Auto

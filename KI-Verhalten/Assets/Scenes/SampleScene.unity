@@ -370,6 +370,87 @@ Transform:
   - {fileID: 158651252}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &70825646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70825647}
+  - component: {fileID: 70825650}
+  - component: {fileID: 70825649}
+  - component: {fileID: 70825648}
+  m_Layer: 8
+  m_Name: TrafficLight 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &70825647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70825646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.76, y: 0.695, z: -44.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 857593076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &70825648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70825646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae33530bae0dbb49878d428a5eeb73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficLight: {fileID: 883807861}
+--- !u!114 &70825649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70825646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c50ab039bf6d4ab9fde3536a5d9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carLightController: {fileID: 883807860}
+--- !u!65 &70825650
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70825646}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.184997, y: 1, z: 0.2867279}
+  m_Center: {x: -0.031714916, y: 0, z: -0.2092247}
 --- !u!1 &148904512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1181,87 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621523823}
   m_Mesh: {fileID: -280005478262404879, guid: 9660f14c91b3b5b4abfbafa760e5e5b1, type: 3}
+--- !u!1 &641466065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641466066}
+  - component: {fileID: 641466069}
+  - component: {fileID: 641466068}
+  - component: {fileID: 641466067}
+  m_Layer: 8
+  m_Name: TrafficLight 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &641466066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641466065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.759, y: 0.695, z: 30.116}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 857593076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &641466067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641466065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae33530bae0dbb49878d428a5eeb73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficLight: {fileID: 857228965}
+--- !u!114 &641466068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641466065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c50ab039bf6d4ab9fde3536a5d9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carLightController: {fileID: 857228966}
+--- !u!65 &641466069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641466065}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.184997, y: 1, z: 0.2867279}
+  m_Center: {x: -0.031714916, y: 0, z: -0.2092247}
 --- !u!1 &652828951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &704225435
 Transform:
   m_ObjectHideFlags: 0
@@ -1653,6 +1815,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 857228964}
+  - component: {fileID: 857228966}
+  - component: {fileID: 857228965}
   m_Layer: 0
   m_Name: TrafficLight_Car
   m_TagString: Untagged
@@ -1679,6 +1843,46 @@ Transform:
   - {fileID: 7822616908400997107}
   m_Father: {fileID: 1274020987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &857228965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857228963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c50ab039bf6d4ab9fde3536a5d9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carLightController: {fileID: 857228966}
+--- !u!114 &857228966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857228963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a9ed0f905a6f146b000afa7208786d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redLightRenderer: {fileID: 8688797482405267270}
+  yellowLightRenderer: {fileID: 1687134455342317188}
+  greenLightRenderer: {fileID: 1443302856400794480}
+  M_TrafficLight_Red_On: {fileID: 2100000, guid: 7bac1a550b876c846922fc1179a02385,
+    type: 2}
+  M_TrafficLight_Red_Off: {fileID: 2100000, guid: 47dcc91cdf32fa74aa06c9c409f052e6,
+    type: 2}
+  M_TrafficLight_Yellow_On: {fileID: 2100000, guid: 5a7ce10640ef3fb4db0de5cc3ba3b342,
+    type: 2}
+  M_TrafficLight_Yellow_Off: {fileID: 2100000, guid: 9d2c938d5e4d4ac49ab1771ba85fbabf,
+    type: 2}
+  M_TrafficLight_Green_On: {fileID: 2100000, guid: a4dfd8a14e0dbf943a3c30551e48485d,
+    type: 2}
+  M_TrafficLight_Green_Off: {fileID: 2100000, guid: 001f8db3f1c361646b15b29fa6ec88dc,
+    type: 2}
 --- !u!1 &857593075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +1913,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2093909088}
+  - {fileID: 641466066}
+  - {fileID: 1385375018}
+  - {fileID: 70825647}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858316549
@@ -2365,7 +2572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1274020987
 Transform:
   m_ObjectHideFlags: 0
@@ -2414,6 +2621,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1678407454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1385375017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385375018}
+  - component: {fileID: 1385375021}
+  - component: {fileID: 1385375020}
+  - component: {fileID: 1385375019}
+  m_Layer: 8
+  m_Name: TrafficLight 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1385375018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385375017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7, y: 0.695, z: -39.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 857593076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385375019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385375017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae33530bae0dbb49878d428a5eeb73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficLight: {fileID: 883807861}
+--- !u!114 &1385375020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385375017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491c50ab039bf6d4ab9fde3536a5d9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carLightController: {fileID: 883807860}
+--- !u!65 &1385375021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385375017}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.184997, y: 1, z: 0.2867279}
+  m_Center: {x: -0.031714916, y: 0, z: -0.2092247}
 --- !u!1 &1390148508
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,7 +3913,7 @@ GameObject:
   - component: {fileID: 2093909092}
   - component: {fileID: 2093909091}
   m_Layer: 8
-  m_Name: TrafficLight
+  m_Name: TrafficLight 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

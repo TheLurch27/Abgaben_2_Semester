@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StartState : IState
@@ -17,11 +19,23 @@ public class StartState : IState
 
     public void Execute()
     {
-        carController.Accelerate(); // Geschwindigkeit erhöhen
+        // Beschleunigen
+        carController.Accelerate();
 
+        // Maximalgeschwindigkeit erreicht
         if (Mathf.Approximately(carController.CurrentSpeed, carController.maxSpeed))
         {
+            Debug.Log("Max speed reached. Switching to DriveState.");
             carController.SetState(new DriveState(carController));
+            return;
+        }
+
+        // Prüfen, ob ein Hindernis erkannt wird
+        if (carController.IsObstacleDetected())
+        {
+            Debug.Log("Obstacle detected. Switching to BrakeState.");
+            carController.SetState(new BrakeState(carController));
+            return;
         }
     }
 

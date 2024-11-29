@@ -17,7 +17,12 @@ public class StopState : IState
 
     public void Execute()
     {
-        // Das Auto bleibt stehen, bis eine neue Bedingung erfüllt ist (z. B. grüne Ampel)
+        // Prüfen, ob die Ampel grün ist (basierend auf TrafficLight-Logik)
+        if (carController.IsTrafficLightGreen())
+        {
+            Debug.Log("Green light detected. Switching to StartState.");
+            carController.SetState(new StartState(carController));
+        }
     }
 
     public void Exit()
