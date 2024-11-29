@@ -19,23 +19,13 @@ public class StartState : IState
 
     public void Execute()
     {
-        // Beschleunigen
         carController.Accelerate();
 
-        // Maximalgeschwindigkeit erreicht
+        // Wechsel in den DriveState, wenn die maxSpeed erreicht ist
         if (Mathf.Approximately(carController.CurrentSpeed, carController.maxSpeed))
         {
             Debug.Log("Max speed reached. Switching to DriveState.");
             carController.SetState(new DriveState(carController));
-            return;
-        }
-
-        // Prüfen, ob ein Hindernis erkannt wird
-        if (carController.IsObstacleDetected())
-        {
-            Debug.Log("Obstacle detected. Switching to BrakeState.");
-            carController.SetState(new BrakeState(carController));
-            return;
         }
     }
 

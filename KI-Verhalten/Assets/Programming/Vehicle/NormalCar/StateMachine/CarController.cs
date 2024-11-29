@@ -42,9 +42,8 @@ public class CarController : MonoBehaviour
         // Erhöhe die Geschwindigkeit bis zur Höchstgeschwindigkeit
         CurrentSpeed = Mathf.Min(CurrentSpeed + acceleration * Time.deltaTime, maxSpeed);
         transform.Translate(transform.right * CurrentSpeed * Time.deltaTime, Space.World);
-        Debug.Log($"Accelerating: Current Speed = {CurrentSpeed}");
+        Debug.Log($"Accelerating: New Speed = {CurrentSpeed:F2}, Max Speed = {maxSpeed:F2}");
     }
-
 
     public void Brake()
     {
