@@ -1,19 +1,27 @@
 using UnityEngine;
 
-public class StopState : ICarState
+public class StopState : IState
 {
-    public void EnterState(CarStateMachine car)
+    private CarController carController;
+
+    public StopState(CarController controller)
     {
-        Debug.Log("Entering StopState");
+        carController = controller;
     }
 
-    public void ExitState()
+    public void Enter()
+    {
+        carController.Stop();
+        Debug.Log("Entering StopState: Car stopped.");
+    }
+
+    public void Execute()
+    {
+        // Das Auto bleibt stehen, bis eine neue Bedingung erfüllt ist (z. B. grüne Ampel)
+    }
+
+    public void Exit()
     {
         Debug.Log("Exiting StopState");
-    }
-
-    public void UpdateState()
-    {
-        // Das Auto bleibt stehen, bis es wieder losfahren möchte
     }
 }

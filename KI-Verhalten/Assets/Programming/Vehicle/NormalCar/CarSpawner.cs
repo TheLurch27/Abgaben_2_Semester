@@ -2,28 +2,35 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
-    public GameObject carPrefab; // Das Auto-Prefab, das gespawnt werden soll
-    public Transform pointA; // Spawnpunkt A
-    public Transform pointC; // Spawnpunkt C
-    public Transform pointB; // Ziel-Punkt B
-    public Transform pointD; // Ziel-Punkt D
+    [SerializeField] private GameObject carPrefab; // Auto Prefab
+    [SerializeField] private Transform spawnPointA; // Spawnpoint A
+    [SerializeField] private Transform spawnPointC; // Spawnpoint C
+    [SerializeField] private Transform despawnPointB; // Despawnpoint B
+    [SerializeField] private Transform despawnPointD; // Despawnpoint D
 
-    private bool spawnAtPointA = true; // Steuerung, an welchem Punkt das Auto gespawnt wird
+    private bool spawnAtA = true; // Wechsel zwischen Spawnpoint A und C
 
-    // Diese Methode wird durch den Button im UI aufgerufen
     public void SpawnCar()
     {
-        Transform spawnPoint = spawnAtPointA ? pointA : pointC;
-        Quaternion spawnRotation = spawnAtPointA ? Quaternion.Euler(0, 270, 0) : spawnPoint.rotation;
+        // Bestimme den Spawn- und Despawnpunkt
+        Transform spawnPoint = spawnAtA ? spawnPointA : spawnPointC;
+        Transform targetPoint = spawnAtA ? despawnPointB : despawnPointD;
 
-        GameObject car = Instantiate(carPrefab, spawnPoint.position, spawnRotation);
-        CarStateMachine carStateMachine = car.GetComponent<CarStateMachine>();
+        // Spawne das Auto
+        GameObject newCar = Instantiate(carPrefab, spawnPoint.position, spawnPoint.rotation);
 
-        Transform targetPoint = spawnAtPointA ? pointB : pointD;
-        carStateMachine.SetTargetPoint(targetPoint); // Ziel setzen
-        carStateMachine.SetState(new ApproachState()); // Beginne mit dem ApproachState
+        // Weise dem Auto den Zielpunkt zu
+        CarController carController = newCar.GetComponent<CarController>();
+        if (carController != null)
+        {
+            carController.SetTarget(targetPoint);
+        }
+        else
+        {
+            Debug.LogError("CarController not found on spawned car!");
+        }
 
-        spawnAtPointA = !spawnAtPointA;
+        // Wechsel den Spawnpunkt für das nächste Auto
+        spawnAtA = !spawnAtA;
     }
-
 }

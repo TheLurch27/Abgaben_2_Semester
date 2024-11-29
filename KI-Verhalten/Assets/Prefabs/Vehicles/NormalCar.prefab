@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 9191470423464391632}
   - component: {fileID: 1461357070966550219}
   - component: {fileID: 8844571499147661918}
-  - component: {fileID: 1813455661635236824}
-  - component: {fileID: 3858698270200788126}
+  - component: {fileID: 1404953336302662443}
+  - component: {fileID: 7744377536998885798}
   m_Layer: 0
   m_Name: NormalCar
   m_TagString: Car
@@ -127,7 +127,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1813455661635236824
+--- !u!114 &1404953336302662443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,14 +136,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2579624612523536560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ebf99930a77e54ca3ce67ddcda57a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 821d598df2ea00047b6484d07baa38d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point1: {fileID: 6649351255657780221}
-  point2: {fileID: 8581615928361000355}
-  point3: {fileID: 8739343907278759080}
-  point4: {fileID: 147305746644702296}
---- !u!114 &3858698270200788126
+  maxSpeed: 6
+  acceleration: 2
+  braking: 3
+--- !u!114 &7744377536998885798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,10 +151,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2579624612523536560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca087fa74fd44fc43b2fd0044a85da11, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a794f4bb0be6e34f9d5897ac0c70e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetSpeed: 5
+  rayDistance: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &3964665057475249743
 GameObject:
   m_ObjectHideFlags: 0

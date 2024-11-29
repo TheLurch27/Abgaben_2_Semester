@@ -1,29 +1,28 @@
+using System.Xml;
 using UnityEngine;
 
-public class DriveState : ICarState
+public class DriveState : IState
 {
-    private float speed = 10f;
-    private CarStateMachine carStateMachine;
+    private CarController carController;
 
-    public void EnterState(CarStateMachine car)
+    public DriveState(CarController controller)
     {
-        carStateMachine = car;
-        Debug.Log("Entering DriveState");
+        carController = controller;
     }
 
-    public void ExitState()
+    public void Enter()
+    {
+        Debug.Log("Entering DriveState: Driving at max speed...");
+        carController.CurrentSpeed = carController.maxSpeed; // Geschwindigkeit sofort setzen
+    }
+
+    public void Execute()
+    {
+        // Fahren mit konstanter Geschwindigkeit
+    }
+
+    public void Exit()
     {
         Debug.Log("Exiting DriveState");
-    }
-
-    public void UpdateState()
-    {
-        MoveCar();
-    }
-
-    private void MoveCar()
-    {
-        // Zugriff auf das Auto über die CarStateMachine
-        carStateMachine.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
